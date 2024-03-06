@@ -13,9 +13,6 @@ module.exports = {
   },
 
   devServer: {
-    static: {
-      directory: path.resolve(__dirname,'./build')
-    },
     host:'localhost',
     port:8080,
     hot:true,

@@ -12,6 +12,7 @@ class App extends Component {
 
   
 
+
   fetchData() {
     fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     .then((response) => response.json())
@@ -34,11 +35,25 @@ class App extends Component {
 
     return(
       <>
-      <h1>Hello {this.props.name}!</h1>
-      <p>{this.state.didLoad && this.state.menu 
-      ? `${this.state.menu.meals[0].strMeal}`
-      : 'Loading...'}</p>
-      <img src = {this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strMealThumb}` : null} ></img>
+      
+        <div>
+          <h1>Hello {this.props.name}!</h1>
+          <p style={{fontSize: '20pt'}}>Here is your recipe: <strong>{this.state.didLoad && this.state.menu 
+          ? `${this.state.menu.meals[0].strMeal}`
+          : 'Loading...'}</strong></p>
+          <button onClick={() => this.fetchData()}>Shuffle Recipe</button>
+          <hr></hr>
+        </div>
+
+        <div style={{display:'flex', gap:'10px'}}>
+          <img style={{maxWidth: '500px'}} src = {this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strMealThumb}` : null} ></img>
+          <div>
+            <p><strong>Origin: </strong>{this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strArea}`: 'Loading...'}</p>
+            <p><strong>Category: </strong>{this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strCategory}`: 'Loading...'}</p>
+            <p><strong>Instructions: </strong>{this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strInstructions}`: 'Loading...'}</p>
+            <p><strong>Youtube </strong> <a href={this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strYoutube}`: 'Loading...'}>Link</a></p>
+          </div>
+        </div>
       </>
     )
   }
