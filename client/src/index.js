@@ -2,7 +2,8 @@ import React from "react";
 import { render } from 'react-dom'
 import App from "../components/App"
 
-const thing = await fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-  .then((response) => response.json());
+const url = new URL(window.location.href)
+const params = new URLSearchParams(url.search)
+const name = params.get('name')
 
-render(<App name = "User"/>,document.getElementById('root'));
+render(<App name = {name}/>,document.getElementById('root'));

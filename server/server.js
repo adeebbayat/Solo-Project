@@ -13,12 +13,12 @@ app.get('/login', (req,res) => {
 
 app.post('/login',(req,res) => {
   
-  console.log(req.body)
-  res.redirect('http://localhost:8080/recipe')
+  const {name} = req.body
+  res.redirect(`http://localhost:8080/recipe?name=${name}`)
 })
 
 app.get('/recipe*',(req,res) => {
-  
+  console.log(req.query)
   res.sendFile(path.resolve(__dirname,'../build/index.html'))
 })
 
