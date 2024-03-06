@@ -35,7 +35,7 @@ class App extends Component {
 
     return(
       <>
-      
+        <button onClick={() => {window.location.href = "http://localhost:8080/login"}}>Logout</button>
         <div>
           <h1>Hello {this.props.name}!</h1>
           <p style={{fontSize: '20pt'}}>Here is your recipe: <strong>{this.state.didLoad && this.state.menu 

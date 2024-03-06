@@ -18,7 +18,7 @@ app.post('/login',(req,res) => {
 })
 
 app.get('/recipe*',(req,res) => {
-  console.log(req.query)
+
   res.sendFile(path.resolve(__dirname,'../build/index.html'))
 })
 
