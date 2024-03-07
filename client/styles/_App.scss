@@ -27,8 +27,8 @@ $margin: 200px;
 }
 
 #img {
-  max-width: 450px;
-  max-height: 450px;
+  width: 450px;
+  height: 450px;
   margin-left: $margin;
 }
 
@@ -41,3 +41,13 @@ $margin: 200px;
   gap:20px;
 }
 
+#heartDiv {
+  position: relative;
+  left:650px;
+  bottom:20px;
+}
+
+#text {
+  position: relative;
+  bottom:100px;
+}
