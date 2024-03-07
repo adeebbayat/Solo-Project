@@ -62,6 +62,7 @@ class App extends Component {
       <>
       <input id = "hidden" type="hidden" />
       <input id = "hiddenVideo" type="hidden"/>
+      <h1 id="title">Egg-straordinaryRecipes.com</h1>
       <div id="topBar">
         <button className="button" onClick={() => {window.location.href = "http://localhost:8080/login"}}>Logout</button>
           <div id="nameAndRecipe">

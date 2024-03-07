@@ -5,6 +5,7 @@ $margin: 200px;
   justify-content: center;
   align-items: center;
   gap:50px;
+  margin-bottom: 30px;
 }
 
 .button {
@@ -50,4 +51,10 @@ $margin: 200px;
 #text {
   position: relative;
   bottom:100px;
+}
+
+#title{
+  text-align: center;
+  margin-bottom: -10px;
+  font-size: 40pt;
 }
