@@ -1,12 +1,13 @@
 import React, {Component} from "react";
-
+import Heart from "react-animated-heart";
 class App extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
       menu: null,
-      didLoad: false
+      didLoad: false,
+      isClick: false,
     }
   }
 
@@ -19,7 +20,8 @@ class App extends Component {
     .then((data) => {
       this.setState({
         menu: data,
-        didLoad:true
+        didLoad:true,
+        isClick:false
       })
       console.log(this.state.menu.meals)
     })
@@ -28,6 +30,12 @@ class App extends Component {
   
   componentDidMount(){
     this.fetchData();
+  }
+
+  handleClick = () => {
+    this.setState(prevState => ({
+      isClick: !prevState.isClick
+    }));
   }
 
 
@@ -45,6 +53,7 @@ class App extends Component {
           </div>
           <button className="button" onClick={() => this.fetchData()}>Shuffle Recipe</button>
       </div>
+      
           <hr></hr>
 
         <div id="imgAndText" >
@@ -54,6 +63,7 @@ class App extends Component {
             <p><strong>Category: </strong>{this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strCategory}`: 'Loading...'}</p>
             <p><strong>Instructions: </strong>{this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strInstructions}`: 'Loading...'}</p>
             <p><strong>Youtube </strong> <a href={this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strYoutube}`: 'Loading...'}>Link</a></p>
+          <Heart isClick = {this.state.isClick} onClick={() => this.handleClick()}/>
           </div>
         </div>
       </>
