@@ -1,0 +1,42 @@
+$margin: 200px;
+
+#topBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:50px;
+}
+
+.button {
+  height:30px;
+  width:150px;
+  background-color: pink;
+  box-shadow: 2px 2px 2px black;
+}
+
+#nameAndRecipe {
+  width:700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#recipeName {
+  font-size: 20pt;
+  margin-top: -10px;
+}
+
+#img {
+  max-width: 450px;
+  max-height: 450px;
+  margin-left: $margin;
+}
+
+#recipeText {
+  margin-right: $margin;
+}
+
+#imgAndText {
+  display:flex; 
+  gap:20px;
+}

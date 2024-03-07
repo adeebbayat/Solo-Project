@@ -28,7 +28,7 @@ class TestComponent extends Component {
     }
     )
     
-    if (response.redirected) {
+    if (response.redirected && this.state.value) {
       // Use window.location.href to navigate to the redirected URL
       window.location.href = response.url;
     } else {
@@ -40,13 +40,17 @@ class TestComponent extends Component {
 
   render() {
     return(
-      <form onSubmit={(event) => this.handleSubmit(event)} method="post" >
-        <label>
-          Enter your name:
-        </label>
-        <input onChange={(event) => this.handleChange(event)} type="text"/>
-        <button>Submit</button>
-      </form>
+      <div id="login">
+        <form onSubmit={(event) => this.handleSubmit(event)} method="post" >
+          <div id="form">
+            <label id="enterName">
+              <strong>Enter your name:</strong>
+            </label>
+            <input onChange={(event) => this.handleChange(event)} type="text"/>
+            <button className="button">Submit</button>
+          </div>
+        </form>
+      </div>
     )
   }
 }

@@ -35,19 +35,21 @@ class App extends Component {
 
     return(
       <>
-        <button onClick={() => {window.location.href = "http://localhost:8080/login"}}>Logout</button>
-        <div>
-          <h1>Hello {this.props.name}!</h1>
-          <p style={{fontSize: '20pt'}}>Here is your recipe: <strong>{this.state.didLoad && this.state.menu 
-          ? `${this.state.menu.meals[0].strMeal}`
-          : 'Loading...'}</strong></p>
-          <button onClick={() => this.fetchData()}>Shuffle Recipe</button>
+      <div id="topBar">
+        <button className="button" onClick={() => {window.location.href = "http://localhost:8080/login"}}>Logout</button>
+          <div id="nameAndRecipe">
+            <h1>Hello {this.props.name}!</h1>
+            <p id="recipeName">Here is your recipe: <strong>{this.state.didLoad && this.state.menu 
+            ? `${this.state.menu.meals[0].strMeal}`
+            : 'Loading...'}</strong></p>
+          </div>
+          <button className="button" onClick={() => this.fetchData()}>Shuffle Recipe</button>
+      </div>
           <hr></hr>
-        </div>
 
-        <div style={{display:'flex', gap:'10px'}}>
-          <img style={{maxWidth: '500px'}} src = {this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strMealThumb}` : null} ></img>
-          <div>
+        <div id="imgAndText" >
+          <img id="img" src = {this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strMealThumb}` : null} ></img>
+          <div id="recipeText">
             <p><strong>Origin: </strong>{this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strArea}`: 'Loading...'}</p>
             <p><strong>Category: </strong>{this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strCategory}`: 'Loading...'}</p>
             <p><strong>Instructions: </strong>{this.state.didLoad && this.state.menu ? `${this.state.menu.meals[0].strInstructions}`: 'Loading...'}</p>

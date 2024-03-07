@@ -1,0 +1,30 @@
+body {
+  background-color: rgb(255, 158, 229);
+}
+
+#login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+#form {
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+  align-items: center;
+  justify-content: center;
+}
+
+#submit{
+  width:150px;
+  height:30px;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 20px;
+}
+
+#enterName {
+
+  font-size: 30pt;
+}
